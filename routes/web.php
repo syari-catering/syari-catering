@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/admin', function () {
     return view('admin/main');
 });
@@ -25,3 +26,11 @@ Route::get('/admin/menu/umum', function () {
 //     Route::get('category/{category}/post', 'Admin\CategoryPostController@index')->name('category.post');
 //     Route::get('author/{user}/post', 'Admin\AuthorController@index')->name('author.post');
 // });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
