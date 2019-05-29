@@ -16,7 +16,7 @@ Route::get('/admin', function () {
     return view('admin/main');
 });
 Route::get('/admin/menu/umum', function () {
-    return view('admin/menu/umum/index');
+    return view('admin/menu/index');
 });
 
 // Route::prefix('admin')->middleware('auth', 'role:Admin')->name('admin.')->group(function () {
