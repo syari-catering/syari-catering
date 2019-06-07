@@ -35,12 +35,6 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 
     // packets rule page
     Route::resource('packetrule', 'PacketRuleController');
-
-
-    // Route::resource('category', 'Admin\CategoriesController');
-
-    // Route::get('category/{category}/post', 'Admin\CategoryPostController@index')->name('category.post');
-    // Route::get('author/{user}/post', 'Admin\AuthorController@index')->name('author.post');
 });
 
 Route::get('/', function () {
@@ -50,11 +44,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::prefix('admin')->name('admin.')->group(function() {
-    Route::resource('/packet','Admin\PacketController');
-
-    Route::get('/',function() {
-        return view('admin/index');
-    });
-});
