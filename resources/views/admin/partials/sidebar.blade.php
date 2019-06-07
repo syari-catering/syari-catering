@@ -14,7 +14,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="admin">
+  <a class="nav-link" href="{{ route('admin.main')}}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
@@ -26,33 +26,30 @@
   <div class="sidebar-heading">
     Menu Makanan
   </div>
-
-  <!-- Nav Item - Pages Collapse Menu -->
+      
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-      <i class="fas fa-fw fa-cog"></i>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="true" aria-controls="collapseThree">
+      <i class="fas fa-fw fa-folder"></i>
       <span>Menu</span>
     </a>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="/admin/menu/umum">Umum</a>
-        <a class="collapse-item" href="cards.html">Prasmanan</a>
-        <a class="collapse-item" href="cards.html">Box</a>
+    <div id="collapseMenu" class="collapse" aria-labelledby="headingMenu" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">        
+        <a class="collapse-item" href="{{ route('admin.menu.index') }}">Daftar Menu</a>
+        <a class="collapse-item" href="{{ route('admin.menuschedule.index') }}">Daftar Jadwal</a>                        
       </div>
     </div>
   </li>
 
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-fw fa-wrench"></i>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePacket" aria-expanded="true" aria-controls="collapseThree">
+      <i class="fas fa-fw fa-folder"></i>
       <span>Paket</span>
     </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">        
-        <a class="collapse-item" href="utilities-animation.html">Paket Harian</a>
-        <a class="collapse-item" href="utilities-animation.html">Paket Acara</a>
-        <a class="collapse-item" href="utilities-animation.html">Paket Instansi</a>        
+    <div id="collapsePacket" class="collapse" aria-labelledby="headingMenu" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">        
+        <a class="collapse-item" href="{{ route('admin.packet.index') }}">Daftar Paket</a>
+        <a class="collapse-item" href="{{ route('admin.packetrule.index') }}">Aturan Paket</a>                        
       </div>
     </div>
   </li>

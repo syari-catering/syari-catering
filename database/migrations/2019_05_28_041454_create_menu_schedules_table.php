@@ -18,7 +18,7 @@ class CreateMenuSchedulesTable extends Migration
             $table->date('date');
             $table->unsignedBigInteger('menu_id');
             $table->timestamps();
-            
+
             $table->foreign('menu_id')->references('id')->on('menus');
         });
     }
