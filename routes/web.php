@@ -16,7 +16,10 @@ Route::get('/admin', function () {
     return view('admin/main');
 });
 Route::get('/admin/menu/umum', function () {
-    return view('admin/menu/index');
+    return view('admin/menu/umum/index');
+});
+Route::get('/admin/kitchen crew/', function() {
+    return view('admin/kitchen crew/index');
 });
 
 // Route::prefix('admin')->middleware('auth', 'role:Admin')->name('admin.')->group(function () {
