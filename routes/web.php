@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,7 @@
 */
 
 
+
 Route::get('/admin', function () {
     return view('admin/main');
 });
@@ -22,13 +24,30 @@ Route::get('/admin/kitchen crew/', function() {
     return view('admin/kitchen crew/index');
 });
 
-// Route::prefix('admin')->middleware('auth', 'role:Admin')->name('admin.')->group(function () {
-//     Route::resource('post', 'Admin\PostController');
-//     Route::resource('category', 'Admin\CategoriesController');
-
-//     Route::get('category/{category}/post', 'Admin\CategoryPostController@index')->name('category.post');
-//     Route::get('author/{user}/post', 'Admin\AuthorController@index')->name('author.post');
+// Route::get('/admin', function () {
+//     return view('admin/main');
 // });
+// Route::get('/admin/menu/umum', function () {
+//     return view('admin/menu/index');
+// });
+
+
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+
+    Route::get('', 'MainController@index')->name('main');
+
+    // menus page
+    Route::resource('menu', 'MenuController');
+
+    // menuschedule page
+    Route::resource('menuschedule', 'MenuScheduleController');
+
+    // packets page
+    Route::resource('packet', 'PacketController');
+
+    // packets rule page
+    Route::resource('packetrule', 'PacketRuleController');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,4 +55,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
