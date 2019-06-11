@@ -15,20 +15,19 @@
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
 			</div>
-                <div class="form-group row">
-                    <label for="" class="Label col-sm-2">Bukti Transfer</label>
-                    <div class="col-sm-8">
-                            <input type="file" name="image" class="form-control" id="">
-                    </div>
+            <div class="form-group row">
+                <label for="" class="Label col-sm-2">Bukti Transfer</label>
+                <div class="col-sm-8">
+                    <input type="file" name="image" class="form-control" id="">
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Upload</button>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Upload</button>
                 </div>
+            </div>
 		</form>		
 	</div>
- 
 </body>
 </html>

@@ -34,10 +34,8 @@
             </tbody>
         </table>
     </div>
-  
-       <br></br>
+        <br></br>
         <button type="submit" class="btn btn-primary" style="float:right;margin-right:20px;">Simpan</button>
         <br></br>
-    
 </body>
 </html>
