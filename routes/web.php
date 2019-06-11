@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,35 +11,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-// Route::get('/admin', function () {
-//     return view('admin/main');
-// });
-// Route::get('/admin/menu/umum', function () {
-//     return view('admin/menu/index');
-// });
-
-Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
-
-    Route::get('', 'MainController@index')->name('main');
-
-    // menus page
-    Route::resource('menu', 'MenuController');
-
-    // menuschedule page
-    Route::resource('menuschedule', 'MenuScheduleController');
-
-    // packets page
-    Route::resource('packet', 'PacketController');
-
-    // packets rule page
-    Route::resource('packetrule', 'PacketRuleController');
-});
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin/index');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/detail', function () {
+    return view('templates.default');
+});
+Route::get('/payment', function () {
+    return view('templates.payment');
+});
+Route::get('/invoice', function () {
+    return view('templates.invoice');
+});
+Route::get('/order', function () {
+    return view('templates.order');
+});
