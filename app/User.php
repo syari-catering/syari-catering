@@ -36,8 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
-    public function kitchenCrew() {
-        $this->hasMany(KitchenCrew::class,"user_kitchenCrew");
+
+    public function kitchenCrew()
+    {
+        $this->hasMany(KitchenCrew::class, "user_kitchenCrew");
     }
 }
