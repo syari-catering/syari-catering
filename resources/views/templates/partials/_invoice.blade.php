@@ -4,7 +4,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta charset="UTF-8">
  <title>Example Invoice</title>
- <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+ <link rel="stylesheet" href="{{ asset('assets/asset/css/style.css') }}">
 </head>
 <body>
  <html lang="en">
@@ -13,13 +13,13 @@
   <title>Editable Invoice</title>
  </head>
  <body>
-    <br></br><br></br>
+    <br><br>
 <div class="container">	
   <div id="page-wrap">
     <div id="header">INVOICE</div>
       <div id="customer">
-        <img id="image" style ="height:50px" src="{{ asset('asset/img/baru.png') }}"  alt="logo" />
-        <br><div id="customer-title">Syari Catering</div></br>
+        <img id="image" style ="height:50px" src="{{ asset('assets/asset/img/baru.png') }}"  alt="logo" />
+        <br><div id="customer-title">Syari Catering</div>
   <div id="identity">  
     <div id="logo">
       <div id="logoctr">
