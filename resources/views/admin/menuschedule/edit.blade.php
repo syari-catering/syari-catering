@@ -10,18 +10,18 @@
         <div class="form-group">
             <label for="menu">Nama Masakan</label>            
             <select name="menu" id="menu" class="form-control">                                
-                @foreach ($menus as $menu)
-                    <option value="{{ old('menu') ?? $menu->id }}">{{ old('menu') ?? $menu->name }}</option>                                                            
+                @foreach ($menus as $menu)               
+                    @if ($menu->id == $menuschedule->menu_id)
+                    <option value="{{ old('menu') ?? $menu->id }}" selected>{{ old('menu') ?? $menu->name }}</option>                                                       @else {
+                        <option value="{{ old('menu') ?? $menu->id }}">{{ old('menu') ?? $menu->name }}</option>                                             
+                    }
+                    @endif
                 @endforeach
             </select>
         </div>
         <div class="form-group">
-            <label for="date">Posting Hari Ke- <font color="blue">(Antara Angka 1-15)</font></label>
-            <select name="date" id="date" class="form-control">
-                @for ($i = 1; $i <= 15; $i++)
-                    <option value="{{ old('date') ?? $i }}">{{ old('date') ?? $i }}</option>                    
-                @endfor
-            </select>            
+            <label for="date">Tanggal Menu Disajikan</label>
+        <input type="number" name="date" id="Date" class="form-control" min="1" value="{{$menuschedule->date}}" disabled>
             <div class="invalid-feedback">
                 {{ $errors->first('date') }}
             </div>  

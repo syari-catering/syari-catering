@@ -44,7 +44,7 @@
               <td>{{ $menu->name }}</td>
               <td>{{ $menu->price }}</td>
               <td>{{ $menu->detail }}</td> 
-              <td align="center"><img src="{{ asset($menu->image) }}" height="100px" width="180px" alt="gambar masakan"></td>
+              <td align="center"><img src="{{ asset($menu->image) }}" height="100px" alt="gambar masakan"></td>
               <td align="center">
                   <a href="{{ route('admin.menu.edit', $menu->id) }}" class="btn btn-warning btn-circle">
                     <i class="fas fa-exclamation-triangle"></i>

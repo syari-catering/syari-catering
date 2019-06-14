@@ -14,46 +14,97 @@
     </div>  
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-          <thead>
-            <tr align="center">
-              <th>No</th>
-              <th>Nama Menu</th>
-              <th>Postingan Menu Hari Ke-</th>              
-              <th colspan="2">Action</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr align="center">              
-              <th>No</th>
-              <th>Nama Menu</th>
-              <th>Postingan Menu Hari Ke-</th>              
-              <th colspan="2">Action</th>
-            </tr>
-          </tfoot>
-          <tbody>
-            <?php $no = 0;?>
-            @foreach ($menuschedules as $menuschedule)
-            <?php $no++ ;?>
-            <tr>
-              <td align="center">{{ $no }}</td>
-              <td>{{ $menuschedule->menu->name }}</td>
-              <td align="center">{{ $menuschedule->date }}</td>                            
-              <td align="center">
-                  <a href="{{ route('admin.menuschedule.edit', $menuschedule->id) }}" class="btn btn-warning btn-circle">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </a>
-              </td>
-              <td align="center">
-                <form action="{{ route('admin.menuschedule.destroy', $menuschedule) }}" method="POST">
-                  @method("DELETE")
-                  @csrf
-                  <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Yakin Menghapus Data Ini ?')"><i class="fas fa-trash"></i></button>
-                </form>              
-              </td>
-            </tr> 
-            @endforeach
-          </tbody>
+        <table class="table table-bordered schedule"  id="dataTable" width="100%" cellspacing="0">
+          @foreach ($menuschedules as $menuschedule)
+              @if ($menuschedule->date % 7 == 1)
+                  <tr>
+                    <td>
+                      <div class="header">
+                        <h5>{{$menuschedule->date}}</h5>
+                        <a href="{{ route('admin.menuschedule.edit', $menuschedule->id) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                      </div>
+                      <div class="img-container">
+                        <img src="{{asset($menuschedule->menu->image)}}" >
+                      </div>
+                      <div class="footer">
+                          {{$menuschedule->menu->name}}
+                      </div>
+                    </td>
+              @elseif($menuschedule->date % 7 == 0 )
+                    <td>
+                      <div class="header">
+                        <h5>{{$menuschedule->date}}</h5>
+                        <a href="{{ route('admin.menuschedule.edit', $menuschedule->id) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                      </div>
+                      <div class="img-container">
+                        <img src="{{asset($menuschedule->menu->image)}}" >
+                      </div>
+                      <div class="footer">
+                          {{$menuschedule->menu->name}}
+                      </div>
+                    </td>
+                  </tr>
+              @else
+                  <td>
+                      <div class="header">
+                        <h5>{{$menuschedule->date}}</h5>
+                        <a href="{{ route('admin.menuschedule.edit', $menuschedule->id) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                      </div>
+                      <div class="img-container">
+                        <img src="{{asset($menuschedule->menu->image)}}" >
+                      </div>
+                      <div class="footer">
+                          {{$menuschedule->menu->name}}
+                      </div>
+                    </td>
+              @endif
+          @endforeach
+          {{-- @foreach ($menuschedules as $menuschedule)
+            @if ($menuschedule->date % 7 == 1)
+                <tr>
+                  <td>
+                    <h5>{{$menuschedule->menu_id}}</h5>
+                    {{$menuschedule->menu->name}}
+                    <div class="img-container">
+                      <img src="{{asset($menuschedule->menu->image)}}" height="100px">
+                    </div>
+                  </td>
+                </tr>
+            @endif
+          @endforeach --}}
+          {{-- @for ($i = 1; $i <= 31; $i++)
+              @if ($i % 7 == 1)
+                <tr>
+                    <td>
+                      <h5>{{$i}}</h5>
+                      {{($menuschedule->menu->name)}}
+                      <img src="{{asset($menuschedule->menu->image) }}" height="100px" style="margin:0;">
+                    </td>
+              @elseif ($i % 7 == 0)
+              <td class="card" style="padding:0;">
+                  <h5>{{$i}}</h5>
+                  <div style="border-radius:50%; overflow: hidden; width:100px; height:100px; margin: 10px; backgrounD:red">
+                      <img src="{{asset($menuschedule->menu->image) }}" height="100px>
+                  </div>
+                  
+                  <div class="card-footer" align=center>
+                      {{($menuschedule->menu->name)}}
+                  </div>
+                </td>
+                  </tr>
+              @else 
+              <td>
+                  <h5>{{$i}}</h5>
+                  <img src="{{asset($menuschedule->menu->image) }}" height="100px" style="margin:0;">
+                </td>
+              @endif
+          @endfor --}}
         </table>
       </div>
     </div>
