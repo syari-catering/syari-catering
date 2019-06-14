@@ -18,42 +18,6 @@
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider">
-
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    Menu Makanan
-  </div>
-      
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="true" aria-controls="collapseThree">
-      <i class="fas fa-fw fa-folder"></i>
-      <span>Menu</span>
-    </a>
-    <div id="collapseMenu" class="collapse" aria-labelledby="headingMenu" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">        
-        <a class="collapse-item" href="{{ route('kitchen_crew.menu.index') }}">Daftar Menu</a>
-        <a class="collapse-item" href="{{ route('kitchen_crew.menuschedule.index') }}">Daftar Jadwal</a>                        
-      </div>
-    </div>
-  </li>
-
-  <!-- Nav Item - Utilities Collapse Menu -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePacket" aria-expanded="true" aria-controls="collapseThree">
-      <i class="fas fa-fw fa-folder"></i>
-      <span>Paket</span>
-    </a>
-    <div id="collapsePacket" class="collapse" aria-labelledby="headingMenu" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">        
-        <a class="collapse-item" href="{{ route('kitchen_crew.packet.index') }}">Daftar Paket</a>
-        <a class="collapse-item" href="{{ route('kitchen_crew.packetrule.index') }}">Aturan Paket</a>                        
-      </div>
-    </div>
-  </li>
-
   <!-- Divider -->
   <hr class="sidebar-divider">
 
@@ -76,25 +40,6 @@
       </div>
     </div>
   </li>
-  
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0">
-  <div class="sidebar-heading">
-    Pembayaran
-  </div>
-      
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Pembayaran</span>
-    </a>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="buttons.html">Bukti Pembayaran</a>
-        <a class="collapse-item" href="cards.html">Rekap</a>
-      </div>
-    </div>
-  </li>  
   
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">  
