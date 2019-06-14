@@ -32,6 +32,13 @@ Route::get('/admin/kitchen crew/', function() {
 // });
 
 
+
+Route::prefix('order')->name('order.')->group(function() {
+    Route::get('','OrderController@keluarga');
+    Route::get('keluarga','OrderController@keluarga')->name('keluarga');
+
+    Route::resource('saveKeluarga','OrderKeluargaController');
+});
 Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 
     Route::get('', 'MainController@index')->name('main');
@@ -55,8 +62,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
-

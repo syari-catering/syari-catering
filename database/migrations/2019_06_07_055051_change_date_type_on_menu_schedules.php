@@ -26,7 +26,7 @@ class ChangeDateTypeOnMenuSchedules extends Migration
     public function down()
     {
         Schema::table('menu_schedules', function (Blueprint $table) {
-            //
+            $table->date('date')->change();
         });
     }
 }

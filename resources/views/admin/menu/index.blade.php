@@ -36,35 +36,15 @@
             </tr>
           </tfoot>
           <tbody>
-<<<<<<< HEAD
-            @foreach ($posts as $post)
-               <tr>
-                <td>{{$post->id}}</td>
-                <td>{{$post->title}}</td>
-                <td>{{ Str::limit ($post->content, 50)}}</td>
-                <td><a href="{{route('admin.category.post',$post->category)}}">{{$post->Category->name}}</a></td>
-                <td><img src="{{asset($post->image) ?? '    '}}" height="100px"></td>
-                <td style="text-align: center;"><a href="{{route('admin.post.edit',$post)}}"><button class="btn btn-success" style="width: 70px;">Edit</button></a></td>
-                <td align="center">
-                  <form action="" method="POST">
-                      @method("DELETE")
-                      @csrf
-                      <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin?')">Delete</button>
-                  </form>              
-                </td>
-               </tr>
-            @endforeach
-=======
             <?php $no = 0;?>
             @foreach ($menus as $menu)
             <?php $no++ ;?>
->>>>>>> refs/remotes/origin/master
             <tr>
               <td align="center">{{ $no }}</td>
               <td>{{ $menu->name }}</td>
               <td>{{ $menu->price }}</td>
               <td>{{ $menu->detail }}</td> 
-              <td align="center"><img src="{{ asset($menu->image) }}" height="100px" width="180px" alt="gambar masakan"></td>
+              <td align="center"><img src="{{ asset($menu->image) }}" height="100px" alt="gambar masakan"></td>
               <td align="center">
                   <a href="{{ route('admin.menu.edit', $menu->id) }}" class="btn btn-warning btn-circle">
                     <i class="fas fa-exclamation-triangle"></i>

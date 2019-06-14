@@ -15,12 +15,8 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="date">Posting Hari Ke- <font color="blue">(Antara Angka 1-15)</font></label>
-            <select name="date" id="date" class="form-control">
-                @for ($i = 1; $i <= 15; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
-                @endfor
-            </select>            
+            <label for="date">Tanggal Menu Disajikan</label>
+            <input type="number" name="date" id="Date" class="form-control" min="1">
             <div class="invalid-feedback">
                 {{ $errors->first('date') }}
             </div>  

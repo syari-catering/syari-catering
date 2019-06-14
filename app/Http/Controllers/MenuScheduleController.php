@@ -17,7 +17,7 @@ class MenuScheduleController extends Controller
      */
     public function index()
     {
-        $menuschedules = MenuSchedule::all();
+        $menuschedules = MenuSchedule::orderby('date','asc')->get();
 
         return view('admin.menuschedule.index', [
             'menuschedules' => $menuschedules
@@ -106,13 +106,11 @@ class MenuScheduleController extends Controller
     {
         $this->validate($request, [
             'menu'    => 'required',
-            'date'   => 'required',
         ], [
             'required' => ':attribute Harus diisi'
         ]);
 
         $menuschedule->menu_id = $request->menu;
-        $menuschedule->date = $request->date;
         $menuschedule->save();
 
         return redirect()->route('admin.menuschedule.index')->with('warning', 'Data Berhasil Diubah');
