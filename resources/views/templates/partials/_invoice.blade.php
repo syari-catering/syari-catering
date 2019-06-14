@@ -18,7 +18,7 @@
   <div id="page-wrap">
     <div id="header">INVOICE</div>
       <div id="customer">
-        <img id="image" style ="height:50px" src="{{ asset('assets/asset/img/baru.png') }}"  alt="logo" />
+        <img id="image" style ="height:50px" src="{{asset('assets/asset/img/logoc.png')}}"  alt="logo" />
         <br><div id="customer-title">Syari Catering</div>
   <div id="identity">  
     <div id="logo">
