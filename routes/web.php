@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 
 Route::get('/admin', function () {
@@ -56,10 +56,15 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::resource('packetrule', 'PacketRuleController');
 });
 
+=======
+>>>>>>> refs/remotes/origin/master
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+<<<<<<< HEAD
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+>>>>>>> refs/remotes/origin/master
