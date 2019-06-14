@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
